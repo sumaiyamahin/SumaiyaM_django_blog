@@ -6,8 +6,9 @@ from django.utils import timezone
 class Books(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    isbn = models.IntegerField
-    published_year = models.IntegerField
+    isbn = models.IntegerField(blank=True, null=True)
+    published_year = models.IntegerField(blank=True, null=True)
+    
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
